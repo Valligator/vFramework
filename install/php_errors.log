@@ -1,0 +1,21 @@
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant TABLE_NAME - assumed 'TABLE_NAME' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 29
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_ID - assumed 'MOD_ID' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 30
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_NAME - assumed 'MOD_NAME' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 31
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_STARTFILE - assumed 'MOD_STARTFILE' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 32
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_ENABLED - assumed 'MOD_ENABLED' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 33
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_TIME_CREATED - assumed 'MOD_TIME_CREATED' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 34
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_TIME_LASTRUN - assumed 'MOD_TIME_LASTRUN' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 35
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_ID - assumed 'MOD_ID' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 36
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_ENABLED - assumed 'MOD_ENABLED' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 37
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Use of undefined constant MOD_ENABLED - assumed 'MOD_ENABLED' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 37
+[09-Jan-2015 11:34:05 America/New_York] PHP Notice:  Undefined variable: mrSql in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 23
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant TABLE_NAME - assumed 'TABLE_NAME' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 29
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_ID - assumed 'MOD_ID' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 30
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_NAME - assumed 'MOD_NAME' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 31
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_STARTFILE - assumed 'MOD_STARTFILE' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 32
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_ENABLED - assumed 'MOD_ENABLED' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 33
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_TIME_CREATED - assumed 'MOD_TIME_CREATED' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 34
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_TIME_LASTRUN - assumed 'MOD_TIME_LASTRUN' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 35
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_ID - assumed 'MOD_ID' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 36
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_ENABLED - assumed 'MOD_ENABLED' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 37
+[09-Jan-2015 11:35:00 America/New_York] PHP Notice:  Use of undefined constant MOD_ENABLED - assumed 'MOD_ENABLED' in /root/Dropbox/Valligator-Server/Valligator-Framework/vModuleDb.php on line 37

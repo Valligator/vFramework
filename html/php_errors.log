@@ -1,0 +1,2 @@
+[16-Jan-2015 15:19:52 America/New_York] PHP Warning:  require_once(config/configDb.php): failed to open stream: No such file or directory in /root/Dropbox/Valligator-Server/Valligator-Framework/models/vRoot.php on line 9
+[16-Jan-2015 15:19:52 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'config/configDb.php' (include_path='.:/usr/share/pear:/usr/share/php') in /root/Dropbox/Valligator-Server/Valligator-Framework/models/vRoot.php on line 9

@@ -1,0 +1,44 @@
+{
+	"module": {
+		"uses_shell_commands": false,
+		"name": "Simple HTTP Validator",
+		"desc": "This is a simple HTTP validator",
+		"ver": "0.1",
+		"author": {
+			"name": "Sam Bossen",
+			"id": "",
+			"desc": "",
+			"website": "www.righthandedmonkey.com",
+			"support_email": "rhm@righthandedmonkey.com"
+		},
+		"launch_file": "simple_http_module.php",
+		"parameters": {
+			"url": {
+				"desc": "Enter your urls to be tested here.",
+				"variable_type": "URL[]",
+				"blank_is_ok": false,
+				"is_value_required": true
+			},
+			"error_indications": {
+				"desc" : "Enter any strings that should not appear in the page to be tested.",
+				"variable_type": "string[]",
+				"blank_is_ok": true,
+				"is_value_required": false
+			},
+			"expected_strings": {
+				"desc" : "Enter any strings that are expected to appear in the page to be tested.",
+				"variable_type": "string[]",
+				"blank_is_ok": true,
+				"is_value_required": false
+			},
+			"response_time_limit": {
+				"desc": "Enter the longest time delay in MS that is acceptable",
+				"default_value": 1000,
+				"high_range": 5000,
+				"low_range": 100,
+				"variable_type": "int",
+				"is_value_required": false
+			}
+		}
+	}
+}
