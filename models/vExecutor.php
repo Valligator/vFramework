@@ -8,7 +8,7 @@ require_once("vModuleInterface.php");
  *  3. Validate input
  *  4. Launch module execution - using $vModule->launcher();
  *  5. Return results to the caller
- */
+ Author: sbossen btoffel
 class vExecutor {
 
 	public static function executeModule($modulename, $filename, $taskId) {
