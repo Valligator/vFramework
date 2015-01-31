@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+@require_once ('config.php');
+
 unset($action);
 unset($whereFrom);
 unset($token);
@@ -24,11 +26,20 @@ if ($action != '' && $token != '' && $token === $_SESSION['csrf-token']) {
 	$pw = $_REQUEST['pw'];
 	if ($un != '' && $pw != '') {
 
-	 // authenticate username and password
-	 if (1 == 1) {
+	 $sessId = vAuthUser::createSession($un,$pw);
+
+//echo 'userId: ' . (int)$sessId['val_user_id'] . '<br />';
+//echo 'sessId: ' .  $sessId['sessId'] . '<br />';
+//exit();
+
+	 if ($sessId['sessId'] != '') {
+	  $_SESSION['sessId'] = $sessId['sessId'];
 	  $err = 1;
 	  $whereTo = 'index.php';
-	 }	  
+	 } else {
+	  $_SESSION['err_code'] = -1;
+	  $_SESSION['err_mesg'] = 'Login failed, please check username and password';
+	 }
 
 	}
 	break;

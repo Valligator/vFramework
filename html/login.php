@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+@require_once('config.php');
+
 // Determine current page
 unset($phpSelf);
 $phpSelfArr = explode("/",$_SERVER['PHP_SELF']);
@@ -10,9 +12,16 @@ $phpSelf = $phpSelfArr[$lastIndex];
 
 // Create new CSRF token and store in session variable
 unset($token);
-$token = base64_encode(mcrypt_create_iv(64, MCRYPT_DEV_URANDOM));
+$token = vAuthUser::genNewToken();
 $_SESSION['csrf-token'] = $token;
 
+// Grab error messages
+$thisErrCode = 0;
+$thisErrMesg = '';
+if (isset($_SESSION['err_code']) == true) $thisErrCode = (int)$_SESSION['err_code'];
+if (isset($_SESSION['err_mesg']) == true) $thisErrMesg = (string)$_SESSION['err_mesg'];
+$_SESSION['err_code'] = '';
+$_SESSION['err_mesg'] = '';
 
 ?>
 <!DOCTYPE html>
@@ -44,6 +53,9 @@ $_SESSION['csrf-token'] = $token;
    <input type="password" id="inputPassword" name="pw" class="form-control" placeholder="Password" required="required" />
   </div>
   <div style="margin-top:25px;"><button id="formBtn" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button></div>
+<?php
+if ((int)$thisErrCode < 0) { echo '<div style="margin-top:25px;text-align:center;" class="alert alert-danger" role="alert"><strong>ERROR!</strong> '.$thisErrMesg.'</div>'; } 
+?>
   <input type="hidden" name="action" value="login" />
   <input type="hidden" name="whereFrom" value="<?=$phpSelf;?>" />
   <input type="hidden" name="token" value="<?=$token;?>" />

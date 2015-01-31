@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+@require_once('config.php');
+@require_once(ABS_CONFIG.'/configFramework.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
