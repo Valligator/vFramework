@@ -4,7 +4,7 @@
 
 ?>
 <div class="container-fluid">
-Hello world.
+Hello world!
 </div>
 <?php
 
