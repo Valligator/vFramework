@@ -62,14 +62,10 @@ if ((int)$thisErrCode < 0) { echo '<div style="margin-top:25px;text-align:center
  </form>
  <?php
  
- $expected = '/usr/VALLIGATOR/vFramework/';
- $sam_way = dirname(__FILE__);
- 
- echo 'The great Sam/Bill debate of 2015:<br /><br />';
- echo 'Expected directory: ' . $expected . '<br /><br />';
- echo 'Sams way: ' . $sam_way . '<br /><br />';
- echo 'Who won?? ';
- if ($expected === $sam_way) echo 'Sam!'; else echo 'Bill!';
+ $test = dirname(__FILE__) . '../config/vConfigBase.php';
+ echo $test;
+ @require_once($test);
+ echo '!!!';
  
  ?>
 </div>
