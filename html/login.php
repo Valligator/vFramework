@@ -60,6 +60,18 @@ if ((int)$thisErrCode < 0) { echo '<div style="margin-top:25px;text-align:center
   <input type="hidden" name="whereFrom" value="<?=$phpSelf;?>" />
   <input type="hidden" name="token" value="<?=$token;?>" />
  </form>
+ <?php
+ 
+ $expected = '/usr/VALLIGATOR/vFramework/';
+ $sam_way = dirname(__FILE__);
+ 
+ echo 'The great Sam/Bill debate of 2015:<br /><br />';
+ echo 'Expected directory: ' . $expected . '<br /><br />';
+ echo 'Sams way: ' . $sam_way . '<br /><br />';
+ echo 'Who won?? ';
+ if ($expected === $sam_way) echo 'Sam!'; else echo 'Bill!';
+ 
+ ?>
 </div>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
