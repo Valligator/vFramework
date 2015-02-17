@@ -60,14 +60,6 @@ if ((int)$thisErrCode < 0) { echo '<div style="margin-top:25px;text-align:center
   <input type="hidden" name="whereFrom" value="<?=$phpSelf;?>" />
   <input type="hidden" name="token" value="<?=$token;?>" />
  </form>
- <?php
- 
- $test = dirname(__FILE__) . '/../config/configBase.php';
- echo $test;
- @require_once($test);
- echo '!!!';
- 
- ?>
 </div>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

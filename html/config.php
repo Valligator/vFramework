@@ -1,5 +1,3 @@
 <?php
-
-@require_once ('/usr/VALLIGATOR/vFramework/config/configBase.php');
-
+@require_once (dirname(__FILE__) . '/../config/configBase.php');
 ?>
