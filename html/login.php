@@ -60,6 +60,7 @@ if ((int)$thisErrCode < 0) { echo '<div style="margin-top:25px;text-align:center
   <input type="hidden" name="whereFrom" value="<?=$phpSelf;?>" />
   <input type="hidden" name="token" value="<?=$token;?>" />
  </form>
+ xxx
 </div>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
