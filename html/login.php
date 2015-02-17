@@ -62,7 +62,7 @@ if ((int)$thisErrCode < 0) { echo '<div style="margin-top:25px;text-align:center
  </form>
  <?php
  
- $test = dirname(__FILE__) . '../config/vConfigBase.php';
+ $test = dirname(__FILE__) . '/../config/vConfigBase.php';
  echo $test;
  @require_once($test);
  echo '!!!';
