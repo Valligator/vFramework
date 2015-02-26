@@ -13,7 +13,7 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * Sets up the fixture, for example, opens a network connection.
-	 * This method is called before a test is executed.
+	 * This method is called before each test is executed.
 	 * 
 	 * Assumes the test database was already created by installHelper::install($un, $pw, vDb::getTestDbName());
 	 */
@@ -23,13 +23,12 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 		//$this->object = new ctg_run_checklist_item;
 		print_ln(__METHOD__." starting.");
 		$this->clean_up_db();
-		$this->clear_session(); //clear session each run
 		print_ln(__METHOD__." complete.");
 	}
 
 	/**
 	 * Tears down the fixture, for example, closes a network connection.
-	 * This method is called after a test is executed.
+	 * This method is called after each test is executed.
 	 */
 	protected function tearDown() {
 		
@@ -38,95 +37,60 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 
 	public function verify_no_run_checklist_items_test() {
 		print_ln(__METHOD__." starting.");
-		$ct_arr = vModuleDb::get_all_items();
-		$this->assertEquals(0, count($ct_arr), "Everything was deleted and table should be empty.");
+		$arr = vModuleDb::getModules();
+		$this->assertEquals(0, count($arr), "Everything should be deleted and table should be empty, but was not.");
 		print_ln(__METHOD__." complete.");
 	}
 
-	public function verify_sample_0_test() {
-		print_ln(__METHOD__." starting.");
-		$ct0 = $this->create_sample_rci(0);
-		$ct_test = new ctg_run_checklist_item();
-		$ct_test->setRunChecklist_ref(100);
-		$ct_test->setChecklist_item_template_ref(1000);
-		$ct_test->setQuestion("question:0".HAPPY_STR);
-		$ct_test->setType("type:0".HAPPY_STR);
-		$ct_test->setExtra("extra:0".HAPPY_STR);
-		$ct_test->setSection_order(10000);
-		$ct_test->setSection_index(100000);
-		$ct_test->setSection_name("sect_name:0".HAPPY_STR);
-		$ct_test->setMeta_status(   META_STATUS_NORMAL);
-		$ct_test->setBy_user(         1000000);
-		$ct_test->setUpload_datetime(get_current_datetime(true));
-		$ct_test->setValue("value:0".HAPPY_STR);
-		$ct_test->setComment("comment:0".HAPPY_STR);
-		$ct_test->setClient_run_checklist_ref_index( 10000000);
-		$ct_test->setClient_checklist_item_template_ref_index( 100000000);
-		$ct_test->setClient_index(1000000000);
-		$ct_test->setClient_uuid("client_uuid:0".HAPPY_STR);
 
-		$not_same = $this->compare_to_sample($ct0);
-		$this->assertTrue(empty($not_same), $not_same);
-		$not_same = $this->compare_item($ct0, $ct_test);
-		$this->assertTrue(empty($not_same), $not_same);
-		print_ln(__METHOD__." complete.");
-	}
-
-	public function verify_sample_42_test() {
+	/**
+	 * Verify the sample generator is operating as we expect
+	 */
+	public function verify_sample_9_test() {
 		print_ln(__METHOD__." starting.");
-		$ct0 = $this->create_sample_rci(42);
-		$ct_test = new ctg_run_checklist_item();
-		$ct_test->setRunChecklist_ref(142);
-		$ct_test->setChecklist_item_template_ref(1042);
-		$ct_test->setQuestion("question:42".HAPPY_STR);
-		$ct_test->setType("type:42".HAPPY_STR);
-		$ct_test->setExtra("extra:42".HAPPY_STR);
-		$ct_test->setSection_order(10042);
-		$ct_test->setSection_index(100042);
-		$ct_test->setSection_name("sect_name:42".HAPPY_STR);
-		$ct_test->setMeta_status(   META_STATUS_NORMAL);
-		$ct_test->setBy_user(         1000042);
-		$ct_test->setUpload_datetime(get_current_datetime(true));
-		$ct_test->setValue("value:42".HAPPY_STR);
-		$ct_test->setComment("comment:42".HAPPY_STR);
-		$ct_test->setClient_run_checklist_ref_index( 10000042);
-		$ct_test->setClient_checklist_item_template_ref_index( 100000042);
-		$ct_test->setClient_index(1000000042);
-		$ct_test->setClient_uuid("client_uuid:42".HAPPY_STR);
+		$test_item = new vModule();
+		$index = 9;
+		$test_item->name("name:$index".HAPPY_STR);
+		$test_item->enabled($index);
+		$test_item->startfile("startf:$index".HAPPY_STR);
+		$test_item->time_lastrun("tl:$index".HAPPY_STR);
 		
-		$not_same = $this->compare_to_sample($ct0, 42);
-		$this->assertTrue(empty($not_same), $not_same);
-		$not_same = $this->compare_item($ct0, $ct_test);
+		$compare_item = self::create_sample_module(9);
+		$not_same = $this->compare_item($test_item, $compare_item);
 		$this->assertTrue(empty($not_same), $not_same);
 		print_ln(__METHOD__." complete.");
 	}
 
-	public function verify_add_sample88_test() {
+	/**
+	 * Verify we can add a sample to the database and get back the same data
+	 */
+	public function verify_add_sample_test() {
 		print_ln(__METHOD__." starting.");
 		//first make sure it is empty
-		$this->verify_no_run_checklist_items();
+		$item_arr = vModuleDb::getModules();
+		$this->assertEquals(0, count($item_arr), "Expecting only no items here.");
 		
-		$ct0 = $this->create_sample_rci(88);
-		$result = vModuleDb::create_item($ct0);
+		//add item
+		$item1 = self::create_sample_module(4);
+		$result = vModuleDb::insert($item1);
+		$this->assertTrue($result > 0, "Expected a last insert id number, but got '$result' on insert");
+		$last_insert_id = $result;
+		
+		$item_arr = vModuleDb::getModules();
+		$this->assertEquals(1, count($item_arr), "Expecting only 1 sample here.");
 
-		$this->assertTrue($result->success, $result->error);
-		$this->assertTrue($result->last_insert_id > 0, "Last insert id is not correct");
-
-		//now read sample88
-		$ct0_read = vModuleDb::get_item($result->last_insert_id);
-		$not_same = $this->compare_item($ct0_read, $ct0);
+		//verify created sample matches what is recovered from database
+		$item_read = vModuleDb::getModule($last_insert_id);
+		//make $item1 the same
+		$item1->id = $last_insert_id;
+		//make sure they match
+		$not_same = $this->compare_item($item_read, $item1);
 		$this->assertTrue(empty($not_same), $not_same);
-		$ct_arr = vModuleDb::get_all_items();
-		$this->assertEquals(1, count($ct_arr), "Expecting only 1 sample here.");
-
-		//now set sample88 to have normal metastatus so it is discovered properly
-		vModuleDb::hide_item($result->last_insert_id, META_STATUS_NORMAL);
-		$ct_arr = vModuleDb::get_all_items();
-		$this->assertEquals(1, count($ct_arr), "Expecting only 1 sample here.");
+		
 		print_ln(__METHOD__." complete.");
 	}
 
-	public function verify_delete_sample88_test() {
+	public function verify_delete_sample_test() {
 		print_ln(__METHOD__." starting.");
 		$item1 = self::create_sample_module(1);
 		$result = vModuleDb::insert($item1);
