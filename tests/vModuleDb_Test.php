@@ -128,16 +128,21 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 
 	public function verify_delete_sample88_test() {
 		print_ln(__METHOD__." starting.");
-		$ct_arr2 = vModuleDb::get_all_items();
-		$this->assertEquals(1, count($ct_arr2), "Expecting only 1 sample here.");
-		$ct_sample = $ct_arr2[0];
-		vModuleDb::delete_item($ct_sample->getId());
+		$item1 = self::create_sample_module(1);
+		$result = vModuleDb::insert($item1);
+		$this->assertTrue($result > 0, "Expected a last insert id number, but got '$result' on insert");
+		
+		$item_arr = vModuleDb::getModules();
+		$this->assertEquals(1, count($item_arr), "Expecting only 1 sample here.");
+
+		//remove created item
+		$del_result = vModuleDb::delete($result);
+		$this->assertTrue($del_result, "Expected item to be deleted.");
+		
 		
 		//check after deleting item
-		$ct_arr2 = vModuleDb::get_all_items();
-		$this->assertEquals(0, count($ct_arr2), "Expecting no samples here.");
-		$ct_arr3 = vModuleDb::get_items_for_checklist($ct_sample->getRunChecklist_ref());
-		$this->assertEquals(0, count($ct_arr3), "Expecting no samples here.");
+		$item_arr2 = vModuleDb::getModules();
+		$this->assertEquals(0, count($item_arr2), "Expecting no samples here.");
 
 		print_ln(__METHOD__." complete.");
 	}

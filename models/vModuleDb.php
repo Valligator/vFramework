@@ -146,6 +146,23 @@ class vModuleDb {
 	}
 	
 	/**
+	 * This function retrieves the modules from the database
+	 * @param type $id
+	 * @return type
+	 */
+	public static function getModules() {
+		$pdo = vDb::getDb();
+		$stmt = $pdo->prepare('SELECT * FROM '.self::TABLE_NAME);
+		$stmt->execute();
+		$arr = array();
+		while( $result = $stmt->fetch(PDO::FETCH_ASSOC) ) {
+			$arr[] = self::createModule($result);
+		}
+		return $arr;
+	}
+	
+	
+	/**
 	 * This function removes the specified object from the database by id
 	 * @param type $id
 	 * @return type
