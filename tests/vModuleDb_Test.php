@@ -14,8 +14,12 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 	/**
 	 * Sets up the fixture, for example, opens a network connection.
 	 * This method is called before a test is executed.
+	 * 
+	 * Assumes the test database was already created by installHelper::install($un, $pw, vDb::getTestDbName());
 	 */
 	protected function setUp() {
+		//use test db - otherwise tests will run on the frameworks normal database
+		vDb::loadTestDb();
 		//$this->object = new ctg_run_checklist_item;
 		print_ln(__METHOD__." starting.");
 		$this->clean_up_db();
@@ -34,7 +38,7 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 
 	public function verify_no_run_checklist_items_test() {
 		print_ln(__METHOD__." starting.");
-		$ct_arr = ctg_run_checklist_item::get_all_items();
+		$ct_arr = vModuleDb::get_all_items();
 		$this->assertEquals(0, count($ct_arr), "Everything was deleted and table should be empty.");
 		print_ln(__METHOD__." complete.");
 	}
@@ -103,36 +107,36 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 		$this->verify_no_run_checklist_items();
 		
 		$ct0 = $this->create_sample_rci(88);
-		$result = ctg_run_checklist_item::create_item($ct0);
+		$result = vModuleDb::create_item($ct0);
 
 		$this->assertTrue($result->success, $result->error);
 		$this->assertTrue($result->last_insert_id > 0, "Last insert id is not correct");
 
 		//now read sample88
-		$ct0_read = ctg_run_checklist_item::get_item($result->last_insert_id);
+		$ct0_read = vModuleDb::get_item($result->last_insert_id);
 		$not_same = $this->compare_item($ct0_read, $ct0);
 		$this->assertTrue(empty($not_same), $not_same);
-		$ct_arr = ctg_run_checklist_item::get_all_items();
+		$ct_arr = vModuleDb::get_all_items();
 		$this->assertEquals(1, count($ct_arr), "Expecting only 1 sample here.");
 
 		//now set sample88 to have normal metastatus so it is discovered properly
-		ctg_run_checklist_item::hide_item($result->last_insert_id, META_STATUS_NORMAL);
-		$ct_arr = ctg_run_checklist_item::get_all_items();
+		vModuleDb::hide_item($result->last_insert_id, META_STATUS_NORMAL);
+		$ct_arr = vModuleDb::get_all_items();
 		$this->assertEquals(1, count($ct_arr), "Expecting only 1 sample here.");
 		print_ln(__METHOD__." complete.");
 	}
 
 	public function verify_delete_sample88_test() {
 		print_ln(__METHOD__." starting.");
-		$ct_arr2 = ctg_run_checklist_item::get_all_items();
+		$ct_arr2 = vModuleDb::get_all_items();
 		$this->assertEquals(1, count($ct_arr2), "Expecting only 1 sample here.");
 		$ct_sample = $ct_arr2[0];
-		ctg_run_checklist_item::delete_item($ct_sample->getId());
+		vModuleDb::delete_item($ct_sample->getId());
 		
 		//check after deleting item
-		$ct_arr2 = ctg_run_checklist_item::get_all_items();
+		$ct_arr2 = vModuleDb::get_all_items();
 		$this->assertEquals(0, count($ct_arr2), "Expecting no samples here.");
-		$ct_arr3 = ctg_run_checklist_item::get_items_for_checklist($ct_sample->getRunChecklist_ref());
+		$ct_arr3 = vModuleDb::get_items_for_checklist($ct_sample->getRunChecklist_ref());
 		$this->assertEquals(0, count($ct_arr3), "Expecting no samples here.");
 
 		print_ln(__METHOD__." complete.");
@@ -142,128 +146,41 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 			
 	//============-----------> Helper Functions <----------------==============\\
 	
-	protected function build_rci_post(ctg_run_checklist_item $item) {
+	protected function build_module_post(vModule $item) {
 		unset($_POST);
 		$_POST = array(
-			ctg_run_checklist_item::CTG_RCI_ID => $item->id,
-			ctg_run_checklist_item::CTG_RCI_RUN_CHECKLIST_REF => $item->rcr,
-			ctg_run_checklist_item::CTG_RCI_CHECKLIST_ITEM_TEMPLATE_REF => $item->citr,
-			ctg_run_checklist_item::CTG_RCI_QUESTION => $item->q,
-			ctg_run_checklist_item::CTG_RCI_TYPE => $item->t,
-			ctg_run_checklist_item::CTG_RCI_EXTRA => $item->e,
-			ctg_run_checklist_item::CTG_RCI_SECTION_ORDER => $item->so,
-			ctg_run_checklist_item::CTG_RCI_SECTION_INDEX => $item->si,
-			ctg_run_checklist_item::CTG_RCI_SECTION_NAME => $item->sn,
-			ctg_run_checklist_item::CTG_RCI_META_STATUS => $item->ms,
-			ctg_run_checklist_item::CTG_RCI_BY_USER => $item->bu,
-			ctg_run_checklist_item::CTG_RCI_UPLOAD_DATE => $item->ud,
-			ctg_run_checklist_item::CTG_RCI_VALUE => $item->v,
-			ctg_run_checklist_item::CTG_RCI_COMMENT => $item->c,
-			ctg_run_checklist_item::CTG_RCI_CLIENT_RC_REF_INDEX => $item->crri,
-			ctg_run_checklist_item::CTG_RCI_CLIENT_CIT_REF_INDEX => $item->ccri,
-			ctg_run_checklist_item::CTG_RCI_CLIENT_INDEX => $item->ci,
-			ctg_run_checklist_item::CTG_RCI_CLIENT_UUID => $item->cu
+			vModuleDb::MOD_ID => $item->id,
+			vModuleDb::MOD_ENABLED => $item->enabled,
+			vModuleDb::MOD_NAME => $item->name,
+			vModuleDb::MOD_STARTFILE => $item->startfile,
+			vModuleDb::MOD_TIME_LASTRUN => $item->time_lastrun
 		);
 	}
-	
-	protected function build_rcis_array_post($arr) {
-		unset($_POST);
-		$_POST = array();
-		$item = new ctg_run_checklist_item();
-		foreach($arr as $item) {
-			$_POST[ctg_run_checklist_item::CTG_RCI_ID][] =$item->id;
-			$_POST[ctg_run_checklist_item::CTG_RCI_RUN_CHECKLIST_REF][] =$item->rcr;
-			$_POST[ctg_run_checklist_item::CTG_RCI_CHECKLIST_ITEM_TEMPLATE_REF][] =$item->citr;
-			$_POST[ctg_run_checklist_item::CTG_RCI_QUESTION][] =$item->q;
-			$_POST[ctg_run_checklist_item::CTG_RCI_TYPE][] =$item->t;
-			$_POST[ctg_run_checklist_item::CTG_RCI_EXTRA][] =$item->e;
-			$_POST[ctg_run_checklist_item::CTG_RCI_SECTION_ORDER][] =$item->so;
-			$_POST[ctg_run_checklist_item::CTG_RCI_SECTION_INDEX][] =$item->si;
-			$_POST[ctg_run_checklist_item::CTG_RCI_SECTION_NAME][] =$item->sn;
-			$_POST[ctg_run_checklist_item::CTG_RCI_META_STATUS][] =$item->ms;
-			$_POST[ctg_run_checklist_item::CTG_RCI_BY_USER][] =$item->bu;
-			$_POST[ctg_run_checklist_item::CTG_RCI_UPLOAD_DATE][] =$item->ud;
-			$_POST[ctg_run_checklist_item::CTG_RCI_VALUE][] =$item->v;
-			$_POST[ctg_run_checklist_item::CTG_RCI_COMMENT][] =$item->c;
-			$_POST[ctg_run_checklist_item::CTG_RCI_CLIENT_RC_REF_INDEX][] =$item->crri;
-			$_POST[ctg_run_checklist_item::CTG_RCI_CLIENT_CIT_REF_INDEX][] =$item->ccri;
-			$_POST[ctg_run_checklist_item::CTG_RCI_CLIENT_INDEX][] =$item->ci;
-			$_POST[ctg_run_checklist_item::CTG_RCI_CLIENT_UUID][] =$item->cu;
-		}
-//		print_r($_POST);
-	}
-	
-	protected function clear_session() {
-		global $page;
-		@$page->unset_session();
-		@session_destroy();
-	}
-
+		
 	protected function clean_up_db() {
-		$result = ctg_run_checklist_item::wipe_run_checklist_items();
-		$this->assertTrue($result->success, $result->error);
+		$result = vModuleDb::wipeModules();
+		$this->assertTrue($result, "Could not clear database, check error log for details.");
 	}
 
-	protected static function create_sample_rci($index=0) {
-		$ct_test = new ctg_run_checklist_item();
+	protected static function create_sample_module($index=0) {
+		$item = new vModule();
 		
-		$ct_test->setRunChecklist_ref(100+$index);
-		$ct_test->setChecklist_item_template_ref(1000+$index);
-		$ct_test->setQuestion("question:$index".HAPPY_STR);
-		$ct_test->setType("type:$index".HAPPY_STR);
-		$ct_test->setExtra("extra:$index".HAPPY_STR);
-		$ct_test->setSection_order(10000+$index);
-		$ct_test->setSection_index(100000+$index);
-		$ct_test->setSection_name("sect_name:$index".HAPPY_STR);
-		$ct_test->setMeta_status(   META_STATUS_NORMAL);
-		$ct_test->setBy_user(         1000000+$index);
-		$ct_test->setUpload_datetime(get_current_datetime(true));
-		$ct_test->setValue("value:$index".HAPPY_STR);
-		$ct_test->setComment("comment:$index".HAPPY_STR);
-		$ct_test->setClient_run_checklist_ref_index( 10000000+$index);
-		$ct_test->setClient_checklist_item_template_ref_index( 100000000+$index);
-		$ct_test->setClient_index(1000000000+$index);
-		$ct_test->setClient_uuid("client_uuid:$index".HAPPY_STR);
-		return $ct_test;
-		
+		$item->enabled = $index;
+		$item->name = "name:$index".HAPPY_STR;
+		$item->startfile  = "startf:$index".HAPPY_STR;
+		$item->time_created  = "tc:$index".HAPPY_STR;
+		$item->time_lastrun  = "tl:$index".HAPPY_STR;
+
+		return $item;
 	}
 
-	
-	protected function create_run_checklist_with_samples($rc_ref) {
-			//now add second template
-		$ct0 = $this->create_sample_rci(78);
-		$ct0->setRunChecklist_ref($rc_ref);
-		$ct0->setMeta_status(META_STATUS_NORMAL);
-		$ct1 = $this->create_sample_rci(79);
-		$ct1->setRunChecklist_ref($rc_ref);
-		$ct1->setMeta_status(META_STATUS_NORMAL);
-		$ct2 = $this->create_sample_rci(80);
-		$ct2->setRunChecklist_ref($rc_ref);
-		$ct2->setMeta_status(META_STATUS_NORMAL);
-		$ct3 = $this->create_sample_rci(81);
-		$ct3->setRunChecklist_ref($rc_ref);
-		$ct3->setMeta_status(META_STATUS_NORMAL);
-		$result = ctg_run_checklist_item::create_item($ct0);
-		$this->assertTrue($result->success, $result->error);
-		$this->assertTrue($result->last_insert_id > 0, "Last insert id is not correct");
-		$result = ctg_run_checklist_item::create_item($ct1);
-		$this->assertTrue($result->success, $result->error);
-		$this->assertTrue($result->last_insert_id > 0, "Last insert id is not correct");
-		$result = ctg_run_checklist_item::create_item($ct2);
-		$this->assertTrue($result->success, $result->error);
-		$this->assertTrue($result->last_insert_id > 0, "Last insert id is not correct");
-		$result = ctg_run_checklist_item::create_item($ct3);
-		$this->assertTrue($result->success, $result->error);
-		$this->assertTrue($result->last_insert_id > 0, "Last insert id is not correct");
-	
-	}
-	
+		
 	/**
-	 * Returns true if they do not match
+	 * Returns true if they do not match, empty if they do match
 	 * @param type $er
 	 */
 	private function compare_to_sample($ct, $index = 0) {
-		$ct_samp = self::create_sample_rci($index);
+		$ct_samp = self::create_sample_module($index);
 		return self::compare_item($ct, $ct_samp);
 	}
 
@@ -271,27 +188,15 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 	 * Returns true if they do not match, empty if they do
 	 * @param type $er
 	 */
-	protected static function compare_item($ct_actual, $ct_desired) {
+	protected static function compare_item($actual, $desired) {
 		$not_same = "";
 		//compare passed item to sample
-		$not_same .= self::compare_helper($ct_desired->getRunChecklist_ref(), $ct_actual->getRunChecklist_ref(), ctg_run_checklist_item::CTG_RCI_RUN_CHECKLIST_REF);
-		$not_same .= self::compare_helper($ct_desired->getChecklist_item_template_ref(), $ct_actual->getChecklist_item_template_ref(), ctg_run_checklist_item::CTG_RCI_CHECKLIST_ITEM_TEMPLATE_REF);
-		$not_same .= self::compare_helper($ct_desired->getQuestion(), $ct_actual->getQuestion(), ctg_run_checklist_item::CTG_RCI_QUESTION);
-		$not_same .= self::compare_helper($ct_desired->getType(), $ct_actual->getType(), ctg_run_checklist_item::CTG_RCI_TYPE);
-		//Doesn't really make sense to change project number because: which project should be used for the where in the update query?
-		//$not_same .= $this->compare_helper(ER_PROJ_ID1 . $prefix, $er->get_forumid(), ER_PROJ_ID);
-		$not_same .= self::compare_helper($ct_desired->getExtra(), $ct_actual->getExtra(), ctg_run_checklist_item::CTG_RCI_EXTRA);
-		$not_same .= self::compare_helper($ct_desired->getSection_order(), $ct_actual->getSection_order(), ctg_run_checklist_item::CTG_RCI_SECTION_ORDER);
-		$not_same .= self::compare_helper($ct_desired->getSection_index(), $ct_actual->getSection_index(), ctg_run_checklist_item::CTG_RCI_SECTION_INDEX);
-		$not_same .= self::compare_helper($ct_desired->getSection_name(), $ct_actual->getSection_name(), ctg_run_checklist_item::CTG_RCI_SECTION_NAME);
-		$not_same .= self::compare_helper($ct_desired->getMeta_status(), $ct_actual->getMeta_status(), ctg_run_checklist_item::CTG_RCI_META_STATUS);
-		$not_same .= self::compare_helper($ct_desired->getBy_user(), $ct_actual->getBy_user(), ctg_run_checklist_item::CTG_RCI_BY_USER);
-		$not_same .= self::compare_helper($ct_desired->getValue(), $ct_actual->getValue(), ctg_run_checklist_item::CTG_RCI_VALUE);
-		$not_same .= self::compare_helper($ct_desired->getComment(), $ct_actual->getComment(), ctg_run_checklist_item::CTG_RCI_COMMENT);
-		$not_same .= self::compare_helper($ct_desired->getClient_run_checklist_ref_index(), $ct_actual->getClient_run_checklist_ref_index(), ctg_run_checklist_item::CTG_RCI_CLIENT_RC_REF_INDEX);
-		$not_same .= self::compare_helper($ct_desired->getClient_checklist_item_template_ref_index(), $ct_actual->getClient_checklist_item_template_ref_index(), ctg_run_checklist_item::CTG_RCI_CLIENT_CIT_REF_INDEX);
-		$not_same .= self::compare_helper($ct_desired->getClient_index(), $ct_actual->getClient_index(), ctg_run_checklist_item::CTG_RCI_CLIENT_INDEX);
-		$not_same .= self::compare_helper($ct_desired->getClient_uuid(), $ct_actual->getClient_uuid(), ctg_run_checklist_item::CTG_RCI_CLIENT_UUID);
+		$not_same .= self::compare_helper($desired->id, $actual->id, vModuleDb::MOD_ID);
+		$not_same .= self::compare_helper($desired->enabled, $actual->enabled, vModuleDb::MOD_ENABLED);
+		$not_same .= self::compare_helper($desired->name, $actual->name, vModuleDb::MOD_NAME);
+		$not_same .= self::compare_helper($desired->startfile, $actual->startfile, vModuleDb::MOD_STARTFILE);
+		//can't really test time created, since each object will be created at a different time
+		$not_same .= self::compare_helper($desired->time_lastrun, $actual->time_lastrun, vModuleDb::MOD_TIME_LASTRUN);
 		return $not_same;
 	}
 
