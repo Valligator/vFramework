@@ -33,7 +33,7 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 	}
 
 
-	public function verify_no_run_checklist_items_test() {
+	public function test_no_run_checklist_items_test() {
 		print_ln(__METHOD__." starting.");
 		$arr = vModuleDb::getModules();
 		$this->assertEquals(0, count($arr), "Everything should be deleted and table should be empty, but was not.");
@@ -44,7 +44,7 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 	/**
 	 * Verify the sample generator is operating as we expect
 	 */
-	public function verify_sample_9_test() {
+	public function test_sample_9_test() {
 		print_ln(__METHOD__." starting.");
 		$test_item = new vModule();
 		$index = 9;
@@ -62,7 +62,7 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 	/**
 	 * Verify we can add a sample to the database and get back the same data
 	 */
-	public function verify_add_sample_test() {
+	public function test_add_sample_test() {
 		print_ln(__METHOD__." starting.");
 		//first make sure it is empty
 		$item_arr = vModuleDb::getModules();
@@ -88,7 +88,7 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 		print_ln(__METHOD__." complete.");
 	}
 
-	public function verify_delete_sample_test() {
+	public function test_delete_sample_test() {
 		print_ln(__METHOD__." starting.");
 		$item1 = self::create_sample_module(1);
 		$result = vModuleDb::insert($item1);
