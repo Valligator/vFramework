@@ -49,10 +49,10 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 		print_ln(__METHOD__." starting.");
 		$test_item = new vModule();
 		$index = 9;
-		$test_item->name("name:$index".HAPPY_STR);
-		$test_item->enabled($index);
-		$test_item->startfile("startf:$index".HAPPY_STR);
-		$test_item->time_lastrun("tl:$index".HAPPY_STR);
+		$test_item->name = "name:$index".HAPPY_STR;
+		$test_item->enabled = $index;
+		$test_item->startfile = "startf:$index".HAPPY_STR;
+		$test_item->time_lastrun = "tl:$index".HAPPY_STR;
 		
 		$compare_item = self::create_sample_module(9);
 		$not_same = $this->compare_item($test_item, $compare_item);
