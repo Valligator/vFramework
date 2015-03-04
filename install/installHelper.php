@@ -23,7 +23,7 @@ class installHelper {
 	
 	protected static function installDatabase(PDO $root_pdo, $dbName=VAL_DB_NAME) {
 		//create the database files in the regular database
-		if (!vDb::databaseExists($dbName)) {
+		if (!vDb::databaseExists($dbName, $root_pdo)) {
 			$result = vDb::createDatabase($root_pdo, $dbName);
 			assert($result, "Could not create database.");
 			$result = vDb::addUser($root_pdo, $dbName, VAL_DB_USER, VAL_DB_PASS);

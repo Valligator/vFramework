@@ -31,26 +31,14 @@ class vModuleDb {
 	const MOD_TIME_CREATED = "mod_time_created";
 	const MOD_TIME_LASTRUN = "mod_time_lastrun";
 
-/***
-	public static function createTable() {
-		$pdo = vDb::getDb();
-		$mrSql = self::getCreateTableHelper();
-		$stmt = $pdo->prepare($mrSql);
-		$sqlResult = $stmt->execute();
-		if (!$sqlResult) {
-			//log error
-			vDebug::errorLog(var_export($stmt, true));
-			vDebug::errorLog("Could not create database, Error: ".var_export($pdo->errorInfo(), true)."\r\nSQL: $mrSql");
-		}
-		return 1;
-	}
-***/
+	const MOD_NAME_LENGTH = 128;
+	const MOD_STARTFILE_LENGTH = 30;
 
 	public static function getCreateTableHelper() {
 		$str = "CREATE TABLE `".self::TABLE_NAME."` (
 			  `".self::MOD_ID."` int(11) NOT NULL AUTO_INCREMENT,
-			  `".self::MOD_NAME."` varchar(128) NOT NULL DEFAULT '',
-			  `".self::MOD_STARTFILE."` varchar(30) NOT NULL DEFAULT '',
+			  `".self::MOD_NAME."` varchar(".self::MOD_NAME_LENGTH.") NOT NULL DEFAULT '',
+			  `".self::MOD_STARTFILE."` varchar(".self::MOD_STARTFILE_LENGTH.") NOT NULL DEFAULT '',
 			  `".self::MOD_ENABLED."` tinyint(1) NOT NULL DEFAULT '0',
 			  `".self::MOD_TIME_CREATED."` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
 			  `".self::MOD_TIME_LASTRUN."` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',

@@ -71,13 +71,16 @@ class vDb {
 		try {
 			self::$dbHandle = new PDO($mr_PDO_string, $un, $pw);
 		} catch (PDOException $e) {
-			vDebug::errorLog("Could not create database connection, Error: ".$e->getMessage());
+			vDebug::errorLog("Could not create database connection, Error: ".$e->getMessage()."\r\nConnect String: $mr_PDO_string");
 		}
 		return self::$dbHandle;
 	}
 
-	public static function databaseExists($dbname) {
-		$pdo = self::getDbHelper("information_schema", VAL_DB_USER, VAL_DB_PASS);
+	public static function databaseExists($dbname, PDO $pdo=null) {
+		//On db creation, we won't be able to connect using Valligator credentials, so use passed PDO
+		if (empty($pdo)) {
+			$pdo = self::getDbHelper("information_schema", VAL_DB_USER, VAL_DB_PASS);
+		}
 		$mrSql = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = :dbname;";
 		$mrStmt = $pdo->prepare($mrSql);
 		//protect from injection attacks
@@ -102,7 +105,8 @@ class vDb {
 
 	public static function createDatabase(PDO $pdo, $dbname) {
 		try {
-			$result = $pdo->exec("CREATE DATABASE IF NOT EXISTS `$dbname`");
+			$result = $pdo->exec("CREATE DATABASE IF NOT EXISTS `$dbname` ".
+					"DEFAULT CHARACTER SET =".VAL_DB_CHARSET." DEFAULT COLLATE=".VAL_DB_COLLATE.";");
 			return ($result == true);
 		} catch (PDOException $e) {
 			vDebug::errorLog("Could not create database '$dbname', Error: ".$e->getMessage());
@@ -111,8 +115,9 @@ class vDb {
 	}
 
 	public static function addUserHelperSql($db, $un, $pw) {
-		$mrSql = //"CREATE USER '$un'@'localhost' IDENTIFIED BY '$pw';".
-				"GRANT SELECT, INSERT, UPDATE, DELETE ON `$db`.* TO '$un'@'localhost';\r\n".
+		$mrSql = "CREATE USER '$un'@'".VAL_DB_SERVER."' IDENTIFIED BY '$pw';\r\n".
+				"GRANT SELECT, INSERT, UPDATE, DELETE ON `$db`.* TO '$un'@'".VAL_DB_SERVER."';\r\n".
+				"GRANT SELECT ON INFORMATION_SCHEMA.SCHEMATA TO '$un'@'".VAL_DB_SERVER."';\r\n".
 				"FLUSH PRIVILEGES;";
 		return $mrSql;
 	}

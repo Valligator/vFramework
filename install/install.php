@@ -15,6 +15,9 @@ if ($count > 2) {
 	$pw = $argv[2];
 	//$db = vDb::getRootDb($un, $pw, VAL_DB_NAME);
 	//assert(!empty($db), "Could not connect to PDO MySQL connection.");
+} else if ($count > 1) {
+	//only username passed, assume blank password
+	$un = $argv[1];
 } else {
 	assert(false, "SQL username and password were not passed.");
 }
