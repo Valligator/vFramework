@@ -52,7 +52,7 @@ class vModConfigDb {
 			  `".self::ENUM_STRINGS."` text NOT NULL,
 			  `".self::IS_REQUIRED."` tinyint(1) NOT NULL DEFAULT '0',
 			  `".self::IS_ARRAY."` tinyint(1) NOT NULL DEFAULT '0',
-			  PRIMARY KEY (`".self::MODULE_REF."`,`".self::PARAM_KEYNAME."`),
+			  PRIMARY KEY (`".self::MODULE_REF."`,`".self::PARAM_KEYNAME."`)
 			) ENGINE=".VAL_DB_ENGINE." DEFAULT CHARSET=".VAL_DB_CHARSET." COLLATE=".VAL_DB_COLLATE.";";
 		return $str;
 	}
