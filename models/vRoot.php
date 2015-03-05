@@ -8,7 +8,7 @@ DEFINE('ABS_MODELS','');
  */
 require_once("../config/configDb.php");
 require_once("vExecutor.php");
-require_once("vModParamDb.php");
+require_once("vModConfigDb.php");
 
 require_once("vDb.php");
 require_once("vNetUtils.php");

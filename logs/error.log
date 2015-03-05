@@ -1,0 +1,167 @@
+1425152980490 - phpunit::main(583) - Could not create database connection, Error: SQLSTATE[HY000] [1130] Host 'localhost' is not allowed to connect to this MySQL server
+1425152981507 - phpunit::main(583) - Could not create database connection, Error: SQLSTATE[HY000] [1130] Host 'localhost' is not allowed to connect to this MySQL server
+1425153405615 - install.php::install(22) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+1425153457472 - install.php::install(22) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+1425154243907 - install.php::install(22) - Could not create database connection, Error: SQLSTATE[HY000] [1130] Host 'localhost' is not allowed to connect to this MySQL server
+1425154389588 - installWindows.php::install(10) - Could not create database connection, Error: SQLSTATE[HY000] [1130] Host 'localhost' is not allowed to connect to this MySQL server
+1425472288748 - install.php::install(22) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425472565310 - install.php::install(25) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425474432906 - install.php::install(25) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425474675866 - install.php::install(25) - Sql:GRANT SELECT, INSERT, UPDATE, DELETE ON `val_framework`.* TO 'val_framework'@'localhost';
+FLUSH PRIVILEGES; 
+Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+1425474676034 - install.php::install(27) - Sql:GRANT SELECT, INSERT, UPDATE, DELETE ON `val_framework_test`.* TO 'val_framework'@'localhost';
+FLUSH PRIVILEGES; 
+Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+1425474842648 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425474842653 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425475460862 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425475460872 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425475468110 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425475468112 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425497979100 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425497979112 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425498463010 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425498463022 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425498748385 - install.php::install(25) - Sql:GRANT SELECT, INSERT, UPDATE, DELETE ON `val_framework`.* TO 'val_framework'@'localhost';
+GRANT SELECT ON SCHEMATA.* TO 'val_framework'@'localhost';
+FLUSH PRIVILEGES; 
+Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+1425498748403 - install.php::install(27) - Sql:GRANT SELECT, INSERT, UPDATE, DELETE ON `val_framework_test`.* TO 'val_framework'@'localhost';
+GRANT SELECT ON SCHEMATA.* TO 'val_framework'@'localhost';
+FLUSH PRIVILEGES; 
+Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+1425498753733 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425498753735 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425498935159 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425498935164 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425499063003 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425499063012 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425499131739 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425499131741 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425499670768 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425499670769 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+1425499823005 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425499823022 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1045] Access denied for user 'val_framework'@'localhost' (using password: YES)
+Connect String: mysql:host=localhost;dbname=val_framework
+1425500275070 - install.php::install(27) - Sql:CREATE USER 'val_framework'@'localhost' IDENTIFIED BY 'P092@47!B;gkJozn8Jis+{e(N';
+GRANT SELECT, INSERT, UPDATE, DELETE ON `val_framework_test`.* TO 'val_framework'@'localhost';
+GRANT SELECT ON INFORMATION_SCHEMA.SCHEMATA TO 'val_framework'@'localhost';
+FLUSH PRIVILEGES; 
+Error: array (
+  0 => 'HY000',
+  1 => 1396,
+  2 => 'Operation CREATE USER failed for \'val_framework\'@\'localhost\'',
+)
+1425500278315 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500278436 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500278453 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500278505 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500885811 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500885821 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500885827 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500981158 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500981170 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425500981175 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501321431 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501321461 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501321465 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501562835 - install.php::install(27) - Sql:CREATE USER 'val_framework'@'localhost' IDENTIFIED BY 'P092@47!B;gkJozn8Jis+{e(N';
+GRANT SELECT, INSERT, UPDATE, DELETE ON `val_framework_test`.* TO 'val_framework'@'localhost';
+GRANT SELECT ON INFORMATION_SCHEMA.SCHEMATA TO 'val_framework'@'localhost';
+FLUSH PRIVILEGES; 
+Error: array (
+  0 => 'HY000',
+  1 => 1396,
+  2 => 'Operation CREATE USER failed for \'val_framework\'@\'localhost\'',
+)
+1425501590252 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501590272 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501590286 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501920047 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501920070 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501964692 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425501964701 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502165526 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502165545 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502165559 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502417538 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502417690 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502417695 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502443972 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502444023 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502444041 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502597373 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502597424 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425502597438 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425503553941 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425503553980 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425503554004 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425503701617 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425503701660 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425503701664 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425504342363 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425504342382 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425504342396 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425504342412 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test

@@ -4,7 +4,7 @@
  * Container for the values to represent a module object
  * Validation code should go here
  */
-class vModParam {
+class vModConfig {
 
 	public $module_ref = 0; //Unique identifier of module,
 	public $param_keyname = ""; //The name of the parameter
