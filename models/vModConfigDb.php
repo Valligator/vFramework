@@ -59,24 +59,25 @@ class vModConfigDb {
 
 	/**
 	 * This function saves the passed object to the database
-	 * @param vParameters $object
-	 * @return int -1 if failed, or last_insert_id if success
+	 * @param vModConfig $object
+	 * @return false if failed, or last_insert_id = true if success (since there is no autoincrement key)
+	 * You will need to check if the strlen(last_insert_id) > 0 for success
 	 */
-	public static function insert(vParameters $object) {
+	public static function insert(vModConfig $object) {
 		$pdo = vDb::getDb();
 		$mrSql = 'INSERT INTO '.self::TABLE_NAME.' ( '.
 				self::MODULE_REF.', '.
 				self::PARAM_KEYNAME.', '.
 				self::PARAM_DISPLAYNAME.', '.
 				self::PARAM_TYPE.', '.
-				self::PARAM_DEFAULT_VALUE.'), '.
-				self::PARAM_DESC.'), '.
-				self::RANGE_HIGH.'), '.
-				self::RANGE_LOW.'), '.
-				self::ENUM_STRINGS.'), '.
-				self::IS_REQUIRED.'), '.
-				self::IS_ARRAY.')'.
-				' VALUES (  '.
+				self::PARAM_DEFAULT_VALUE.', '.
+				self::PARAM_DESC.', '.
+				self::RANGE_HIGH.', '.
+				self::RANGE_LOW.', '.
+				self::ENUM_STRINGS.', '.
+				self::IS_REQUIRED.', '.
+				self::IS_ARRAY.''.
+				') VALUES (  '.
 				' :'.self::MODULE_REF.', '.
 				' :'.self::PARAM_KEYNAME.', '.
 				' :'.self::PARAM_DISPLAYNAME.', '.
@@ -105,7 +106,12 @@ class vModConfigDb {
 		$sqlResult = $stmt->execute();
 		if ($sqlResult) {
 			vDebug::debugLog("Last insert id is {$pdo->lastInsertId()}");
-			return $pdo->lastInsertId();
+			//send true if we think this was successful (b/c last_insert_id will be "0" on success with no auto_increment key
+			if (strlen($pdo->lastInsertId()) > 0){
+				return true;
+			} else {
+				return $pdo->lastInsertId();
+			}
 		} else {
 			//log error
 			vDebug::errorLog(var_export($stmt, true));
@@ -173,7 +179,7 @@ class vModConfigDb {
 		$stmt->bindParam(':'.self::PARAM_KEYNAME, $key, PDO::PARAM_STR);
 		$stmt->execute();
 		$result = $stmt->fetch(PDO::FETCH_ASSOC);
-		return self::create_module($result);
+		return self::createModConfig($result);
 	}
 	
 	/**
@@ -278,10 +284,10 @@ class vModConfigDb {
 	/**
 	 * Factory method for creating the object
 	 * @param type $fetch_arr
-	 * @return \vParameters
+	 * @return \vModConfig
 	 */
 	public static function createModConfig($fetch_arr = null) {
-		$object = new vParameters();
+		$object = new vModConfig();
 		//with vUtils::setEntryIfExists
 		vUtils::setEntryIfExists($fetch_arr, self::MODULE_REF, $object->module_ref);
 		vUtils::setEntryIfExists($fetch_arr, self::PARAM_KEYNAME, $object->param_keyname);

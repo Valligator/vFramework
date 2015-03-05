@@ -35,7 +35,7 @@ class vModuleDb_Test extends PHPUnit_Framework_TestCase {
 	}
 
 
-	public function test_no_run_checklist_items_test() {
+	public function test_no_items_test() {
 		print_ln(__METHOD__." starting.");
 		$arr = vModuleDb::getModules();
 		$this->assertEquals(0, count($arr), "Everything should be deleted and table should be empty, but was not.");
