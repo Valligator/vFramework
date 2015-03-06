@@ -123,6 +123,7 @@ class vDb {
 	}
 	
 	public static function addUser(PDO $pdo, $db, $un, $pw) {
+		//TODO: Make a check to mysql.user on host
 		$mrSql = self::addUserHelperSql($db, $un, $pw);
 		try {
 			$result = $pdo->exec($mrSql);

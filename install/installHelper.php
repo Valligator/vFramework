@@ -23,6 +23,8 @@ class installHelper {
 		assert($result, "Could not create table: ".vModConfigDb::TABLE_NAME);
 		$result = self::installChecker($root_pdo, vTaskDb::TABLE_NAME, vTaskDb::getCreateTableHelper());
 		assert($result, "Could not create table: ".vTaskDb::TABLE_NAME);
+		$result = self::installChecker($root_pdo, vTaskParamDb::TABLE_NAME, vTaskParamDb::getCreateTableHelper());
+		assert($result, "Could not create table: ".vTaskParamDb::TABLE_NAME);
 	}
 	
 	protected static function installDatabase(PDO $root_pdo, $dbName=VAL_DB_NAME) {

@@ -21,6 +21,7 @@ echo Start:$(date)
 t /usr/VALLIGATOR/vFramework/tests/vModuleDb_Test.php
 t /usr/VALLIGATOR/vFramework/tests/vModConfigDb_Test.php
 t /usr/VALLIGATOR/vFramework/tests/vTaskDb_Test.php
+t /usr/VALLIGATOR/vFramework/tests/vTaskParamDb_Test.php
 
 echo End:$(date)
 #echo $(date) > timeend.txt

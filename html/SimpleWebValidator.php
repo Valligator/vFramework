@@ -7,7 +7,7 @@
  */
 class SimpleWebValidator implements vModuleInterface {
 
-	public function launcher(vParameters $params) {
+	public function launcher(vTaskParam $params) {
 		$result = new vResult();
 
 		//First get the global post params - for logging in for example

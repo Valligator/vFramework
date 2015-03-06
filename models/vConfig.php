@@ -27,10 +27,10 @@ class vConfig {
 	
 	/**
 	 * 
-	 * @param vParameters $params
+	 * @param vTaskParam $params
 	 * @return boolean - true if successful
 	 */
-	public function validateModuleParameters(vParameters $params) {
+	public function validateModuleParameters(vTaskParam $params) {
 		//Demo code
 		return true;
 	}

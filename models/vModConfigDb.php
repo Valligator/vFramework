@@ -263,7 +263,6 @@ class vModConfigDb {
 	/**
 	 * This function removes the config for all modules
 	 * to be used for testing purposes
-	 * @param type $mod_ref
 	 * @return type
 	 */
 	public static function wipeAllConfigs() {

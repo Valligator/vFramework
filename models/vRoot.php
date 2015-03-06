@@ -16,8 +16,10 @@ require_once("vUtils.php");
 require_once("vDebug.php");
 
 //Valligator models
-require_once("vExecutor.php");
+require_once("vModuleDb.php");
 require_once("vModConfigDb.php");
+require_once("vTaskParamDb.php");
 require_once("vTaskDb.php");
+require_once("vExecutor.php");
 
 ?>
