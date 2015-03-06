@@ -215,7 +215,7 @@ class vModuleDb {
 	 */
 	public static function wipeModules() {
 		$pdo = vDb::getDb();
-		$stmt = $pdo->prepare('DELETE FROM '.self::TABLE_NAME);
+		$stmt = $pdo->prepare($mrSql = 'DELETE FROM '.self::TABLE_NAME);
 		$sqlResult = $stmt->execute();
 
 		if ($sqlResult) {
@@ -275,7 +275,7 @@ CREATE TABLE `module_param` (
 
 CREATE TABLE `task` (
   `task_id` int(11) NOT NULL AUTO_INCREMENT,
-  `task_status` int DEFAULT 0, #varchar(32) NOT NULL DEFAULT '', #enum('Queued','Processing','Complete') NOT NULL DEFAULT 'Queued',
+  `task_status` int DEFAULT 0, 
   `module_ref` int(11) NOT NULL DEFAULT '0',
   `time_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `time_to_execute` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',

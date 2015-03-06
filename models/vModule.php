@@ -20,12 +20,12 @@ class vModule {
 	public static function readModuleFromPost() {
 		$mod = new vModule();
 		//sanitize input
-		$mod->id = vNetUtils::filter_both(self::MOD_ID, FILTER_SANITIZE_NUMBER_INT);
-		$mod->name = vNetUtils::filter_both(self::MOD_NAME, FILTER_SANITIZE_NUMBER_INT);
-		$mod->startfile = vNetUtils::filter_both(self::MOD_STARTFILE, FILTER_SANITIZE_NUMBER_INT);
-		$mod->enabled = vNetUtils::filter_both(self::MOD_ENABLED, FILTER_SANITIZE_NUMBER_INT);
-		$mod->time_created = vNetUtils::filter_both(self::MOD_TIME_CREATED, FILTER_SANITIZE_NUMBER_INT);
-		$mod->time_lastrun = vNetUtils::filter_both(self::MOD_TIME_LASTRUN, FILTER_SANITIZE_NUMBER_INT);
+		$mod->id = vNetUtils::filter_both(vModuleDb::MOD_ID, FILTER_SANITIZE_NUMBER_INT);
+		$mod->name = vNetUtils::filter_both(vModuleDb::MOD_NAME, FILTER_SANITIZE_NUMBER_INT);
+		$mod->startfile = vNetUtils::filter_both(vModuleDb::MOD_STARTFILE, FILTER_SANITIZE_NUMBER_INT);
+		$mod->enabled = vNetUtils::filter_both(vModuleDb::MOD_ENABLED, FILTER_SANITIZE_NUMBER_INT);
+		$mod->time_created = vNetUtils::filter_both(vModuleDb::MOD_TIME_CREATED, FILTER_SANITIZE_NUMBER_INT);
+		$mod->time_lastrun = vNetUtils::filter_both(vModuleDb::MOD_TIME_LASTRUN, FILTER_SANITIZE_NUMBER_INT);
 		return $mod;
 	}
 	
