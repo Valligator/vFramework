@@ -1,4 +1,5 @@
 <?php
+echo "Sam was here";
 session_start();
 
 @require_once('config.php');
