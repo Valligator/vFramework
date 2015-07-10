@@ -1,4 +1,8 @@
 <?php
+
+echo '!!!';
+exit();
+
 session_start();
 
 @require_once('config.php');
