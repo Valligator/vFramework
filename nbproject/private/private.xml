@@ -3,14 +3,51 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="valligator">
-            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/install/installHelper.php</file>
-            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModConfig.php</file>
-            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/run_tests.sh</file>
-            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/install.bat</file>
-            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModuleDb.php</file>
-            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vRoot.php</file>
-            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/run_tests.bat</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/vTaskDb_Test.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vTaskParam.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vTaskParamDb.php</file>
             <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModConfigDb.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModConfig.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vExecutor.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/install.bat</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/install/install.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/install/installHelper.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vDb.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/vTaskParamDb_Test.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/run_tests.bat</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/run_tests.sh</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModuleInterface.php</file>
+            <file>file:/C:/Transfer/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vRoot.php</file>
+        </group>
+        <group name="Valligator">
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/playground.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/install/install.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vDebug.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vDb.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vConfig.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vAuthUser.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vTaskParamDb.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vTaskParam.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vResult.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vUtils.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vTaskParamInterface.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/html/test_module.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/html/test.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/html/workingDirTest.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vRoot.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/README.md</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/html/login.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/vModuleDb_Test.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/tests/vModConfigDb_Test.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModConfig.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vExecutor.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vTask.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/html/SimpleWebValidator.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModuleInterface.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModuleDb.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModule.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vModConfigDb.php</file>
+            <file>file:/Users/sbossen/Dropbox/software_projects/valligator/sam_git_val_repo/vFramework/models/vNetUtils.php</file>
         </group>
     </open-files>
 </project-private>

@@ -165,3 +165,157 @@ Connect String: mysql:host=localhost;dbname=val_framework_test
 Connect String: mysql:host=localhost;dbname=val_framework_test
 1425504342412 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
 Connect String: mysql:host=localhost;dbname=val_framework_test
+1425560750606 - install.php::install(25) - PDOStatement::__set_state(array(
+   'queryString' => 'CREATE TABLE `module_param` (
+			  `module_ref` int(11) NOT NULL DEFAULT \'0\',
+			  `param_keyname` varchar(60) NOT NULL DEFAULT \'\',
+			  `param_displayname` varchar(100) NOT NULL DEFAULT \'\',
+			  `param_type` varchar(16) NOT NULL DEFAULT \'\',
+			  `param_default_value` text NOT NULL,
+			  `param_desc` text NOT NULL,
+			  `range_high` int(11) NOT NULL DEFAULT \'0\',
+			  `range_low` int(11) NOT NULL DEFAULT \'0\',
+			  `enum_strings` text NOT NULL,
+			  `is_required` tinyint(1) NOT NULL DEFAULT \'0\',
+			  `is_array` tinyint(1) NOT NULL DEFAULT \'0\',
+			  PRIMARY KEY (`module_ref`,`param_keyname`),
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;',
+))
+1425560750606 - install.php::install(25) - Could not create table, Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+SQL: CREATE TABLE `module_param` (
+			  `module_ref` int(11) NOT NULL DEFAULT '0',
+			  `param_keyname` varchar(60) NOT NULL DEFAULT '',
+			  `param_displayname` varchar(100) NOT NULL DEFAULT '',
+			  `param_type` varchar(16) NOT NULL DEFAULT '',
+			  `param_default_value` text NOT NULL,
+			  `param_desc` text NOT NULL,
+			  `range_high` int(11) NOT NULL DEFAULT '0',
+			  `range_low` int(11) NOT NULL DEFAULT '0',
+			  `enum_strings` text NOT NULL,
+			  `is_required` tinyint(1) NOT NULL DEFAULT '0',
+			  `is_array` tinyint(1) NOT NULL DEFAULT '0',
+			  PRIMARY KEY (`module_ref`,`param_keyname`),
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+1425560750628 - install.php::install(27) - PDOStatement::__set_state(array(
+   'queryString' => 'CREATE TABLE `module_param` (
+			  `module_ref` int(11) NOT NULL DEFAULT \'0\',
+			  `param_keyname` varchar(60) NOT NULL DEFAULT \'\',
+			  `param_displayname` varchar(100) NOT NULL DEFAULT \'\',
+			  `param_type` varchar(16) NOT NULL DEFAULT \'\',
+			  `param_default_value` text NOT NULL,
+			  `param_desc` text NOT NULL,
+			  `range_high` int(11) NOT NULL DEFAULT \'0\',
+			  `range_low` int(11) NOT NULL DEFAULT \'0\',
+			  `enum_strings` text NOT NULL,
+			  `is_required` tinyint(1) NOT NULL DEFAULT \'0\',
+			  `is_array` tinyint(1) NOT NULL DEFAULT \'0\',
+			  PRIMARY KEY (`module_ref`,`param_keyname`),
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;',
+))
+1425560750628 - install.php::install(27) - Could not create table, Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+SQL: CREATE TABLE `module_param` (
+			  `module_ref` int(11) NOT NULL DEFAULT '0',
+			  `param_keyname` varchar(60) NOT NULL DEFAULT '',
+			  `param_displayname` varchar(100) NOT NULL DEFAULT '',
+			  `param_type` varchar(16) NOT NULL DEFAULT '',
+			  `param_default_value` text NOT NULL,
+			  `param_desc` text NOT NULL,
+			  `range_high` int(11) NOT NULL DEFAULT '0',
+			  `range_low` int(11) NOT NULL DEFAULT '0',
+			  `enum_strings` text NOT NULL,
+			  `is_required` tinyint(1) NOT NULL DEFAULT '0',
+			  `is_array` tinyint(1) NOT NULL DEFAULT '0',
+			  PRIMARY KEY (`module_ref`,`param_keyname`),
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+1425587140854 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587140871 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587140876 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587140905 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587194218 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587692709 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587692729 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587796383 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587796416 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587796425 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587829358 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587829377 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587829395 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587829410 - phpunit::main(46) - PDOStatement::__set_state(array(
+   'queryString' => 'INSERT INTO module_param ( module_ref, param_keyname, param_displayname, param_type, param_default_value), param_desc), range_high), range_low), enum_strings), is_required), is_array) VALUES (   :module_ref,  :param_keyname,  :param_displayname,  :param_type,  :param_default_value,  :param_desc,  :range_high,  :range_low,  :enum_strings,  :is_required,  :is_array)',
+))
+1425587829410 - phpunit::main(46) - Could not save to database getting result=false. Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+SQL: INSERT INTO module_param ( module_ref, param_keyname, param_displayname, param_type, param_default_value), param_desc), range_high), range_low), enum_strings), is_required), is_array) VALUES (   :module_ref,  :param_keyname,  :param_displayname,  :param_type,  :param_default_value,  :param_desc,  :range_high,  :range_low,  :enum_strings,  :is_required,  :is_array)
+1425587923110 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587923128 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587923143 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587923146 - phpunit::main(46) - PDOStatement::__set_state(array(
+   'queryString' => 'INSERT INTO module_param ( module_ref, param_keyname, param_displayname, param_type, param_default_value), param_desc), range_high), range_low), enum_strings), is_required), is_array) VALUES (   :module_ref,  :param_keyname,  :param_displayname,  :param_type,  :param_default_value,  :param_desc,  :range_high,  :range_low,  :enum_strings,  :is_required,  :is_array)',
+))
+1425587923146 - phpunit::main(46) - Could not save to database getting result=false. Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+SQL: INSERT INTO module_param ( module_ref, param_keyname, param_displayname, param_type, param_default_value), param_desc), range_high), range_low), enum_strings), is_required), is_array) VALUES (   :module_ref,  :param_keyname,  :param_displayname,  :param_type,  :param_default_value,  :param_desc,  :range_high,  :range_low,  :enum_strings,  :is_required,  :is_array)
+1425587978752 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587978761 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425587978766 - phpunit::main(46) - Could not create database connection, Error: SQLSTATE[HY000] [1044] Access denied for user 'val_framework'@'localhost' to database 'val_framework_test'
+Connect String: mysql:host=localhost;dbname=val_framework_test
+1425646913337 - phpunit::main(46) - PDOStatement::__set_state(array(
+   'queryString' => 'DELETE FROM task',
+))
+1425647010975 - phpunit::main(46) - PDOStatement::__set_state(array(
+   'queryString' => 'DELETE FROM task',
+))
+1425647010976 - phpunit::main(46) - vTaskDb could not update to database getting result=false. Error: array (
+  0 => '00000',
+  1 => NULL,
+  2 => NULL,
+)
+SQL: DELETE FROM task
+1428531942088 - install.php::install(25) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No such file or directory
+Connect String: mysql:host=localhost
+1428532028281 - install.php::install(25) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No such file or directory
+Connect String: mysql:host=localhost
+1428534099567 - test_code.php::getRootDb(5) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No such file or directory
+Connect String: mysql:host=localhost
+1428534233018 - test_code.php::getRootDb(6) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No such file or directory
+Connect String: mysql:host=localhost
+1428534260545 - test_code.php::getRootDb(6) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No such file or directory
+Connect String: mysql:host=localhost
+1428534260560 - test_code.php::install(9) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No such file or directory
+Connect String: mysql:host=localhost
+1428534311071 - test_code.php::getRootDb(6) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No such file or directory
+Connect String: mysql:host=localhost
+1428535385804 - test_code.php::getRootDb(6) - Could not create database connection, Error: SQLSTATE[HY000] [2002] No such file or directory
+Connect String: mysql:host=localhost
