@@ -25,7 +25,7 @@ $phpSelf = $phpSelfArr[$lastIndex];
 // Create new CSRF token and store in session variable
 unset($token);
 $token = vAuthUser::genNewToken();
-$_SESSION['csrf-token'] = $token;
+if (isset($token)) { $_SESSION['csrf-token'] = $token; }
 
 // Grab error messages
 $thisErrCode = 0;
