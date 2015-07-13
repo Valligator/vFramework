@@ -1,19 +1,6 @@
 <?php
 session_start();
-
 @require_once('config.php');
-
-
-/*
-$mods = vModuleDb::getModules();
-
-echo "<pre>";
-print_r($mods);
-echo "</pre>";
-
-exit();
-*/
-
 
 // Determine current page
 unset($phpSelf);
