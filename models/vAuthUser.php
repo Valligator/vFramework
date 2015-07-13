@@ -94,8 +94,7 @@ class vAuthUser {
 	// Descrip:	Generates a random new cryptographically strong string to be used as session identifier, password salt, OTP, or CSRF token
 	//
 	public static function genNewToken() {
-	 $val = base64_encode(mcrypt_create_iv(40, MCRYPT_DEV_URANDOM));
-	 return $val;
+	 return vUtils::base64_url_encode(vUtils::genKey());
 	}
 
 

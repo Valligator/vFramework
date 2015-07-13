@@ -26,9 +26,8 @@ class vUtils {
 	}
 
 	// generate 56-character key string (used for tokens, salts, sessions, etc.)
-	public static function genKey()
-	{
+	public static function genKey() {
 		return base64_encode(mcrypt_create_iv(40, MCRYPT_DEV_URANDOM));
 	}
-	
+
 }

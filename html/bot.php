@@ -7,12 +7,13 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 var token = '<?php echo $token;?>';
+var tokenURL = '<?php echo urlencode($token);?>';
 $(document).ready(function() {
 <?php if ($phpSelf == 'module.php') { ?>
  var viewModListAjax = $.ajax({
   method: "POST",
   url: "ajax_loadData.php",
-  data: { action: "viewModList", token: token },
+  data: { action: "viewModList", token: tokenURL },
   dataType: "json"
  });
  viewModListAjax.success(function(data){

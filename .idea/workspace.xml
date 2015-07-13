@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="218e9b08-1c2f-4291-9c4b-bb4bbaa94e2c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/bot.php" afterPath="$PROJECT_DIR$/html/bot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/vAuthUser.php" afterPath="$PROJECT_DIR$/models/vAuthUser.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/vUtils.php" afterPath="$PROJECT_DIR$/models/vUtils.php" />
     </list>
     <ignored path="vFramework.iws" />
@@ -27,8 +29,8 @@
       <file leaf-file-name="top.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/top.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.9433963">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.3018868">
+              <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
               <folding>
                 <marker date="1436749809877" expanded="true" signature="862:2353" placeholder="..." />
                 <marker date="1436749809877" expanded="true" signature="869:1012" placeholder="..." />
@@ -46,11 +48,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vUtils.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vAuthUser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/vAuthUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.4339623">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding>
+                <marker date="1436750539900" expanded="true" signature="1102:1181" placeholder="SELECT val_u..val_user..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vUtils.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/vUtils.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8674464">
-              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+            <state vertical-scroll-proportion="-8.396227">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bot.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bot.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/bot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.773585">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.69590646">
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -122,9 +136,10 @@
         <option value="$PROJECT_DIR$/html/index.php" />
         <option value="$PROJECT_DIR$/html/ajax_loadData.php" />
         <option value="$PROJECT_DIR$/html/module.php" />
-        <option value="$PROJECT_DIR$/html/bot.php" />
         <option value="$PROJECT_DIR$/html/top.php" />
         <option value="$PROJECT_DIR$/models/vUtils.php" />
+        <option value="$PROJECT_DIR$/models/vAuthUser.php" />
+        <option value="$PROJECT_DIR$/html/bot.php" />
       </list>
     </option>
   </component>
@@ -437,14 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/bot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.773585">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -513,10 +520,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/vUtils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.396227">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/vAuthUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4339623">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <marker date="1436750539900" expanded="true" signature="1102:1181" placeholder="SELECT val_u..val_user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/top.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9433963">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.3018868">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
           <folding>
             <marker date="1436749809877" expanded="true" signature="862:2353" placeholder="..." />
             <marker date="1436749809877" expanded="true" signature="869:1012" placeholder="..." />
@@ -533,10 +558,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/vUtils.php">
+    <entry file="file://$PROJECT_DIR$/html/bot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8674464">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.69590646">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
           <folding />
         </state>
       </provider>
