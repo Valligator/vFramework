@@ -14,10 +14,11 @@ $(document).ready(function() {
   method: "POST",
   url: "ajax_loadData.php",
   data: { action: "viewModList", token: tokenURL },
-  dataType: "json"
- });
- viewModListAjax.success(function(data){
-  $('#divModView').html('!!!');
+  dataType: "json",
+  success: function(data) {
+   $('#divModView').html('!!!');
+   alert('asdf');
+  }
  });
 <?php } ?>
 });

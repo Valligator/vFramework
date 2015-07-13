@@ -6,8 +6,9 @@ session_start();
 
 $action = '';
 $token = '';
+$val = array();
 if (isset($_REQUEST['action']) == true) $action = $_REQUEST['action'];
-if (isset($_SESSION['token']) == true) $token = $_SESSION['token'];
+if (isset($_SESSION['csrf-token']) == true) $token = $_SESSION['csrf-token'];
 if ($action != '' && $token != '' && $token === $_SESSION['csrf-token']) {
  switch($action) {
 
@@ -17,6 +18,7 @@ if ($action != '' && $token != '' && $token === $_SESSION['csrf-token']) {
          $mod = vModuleDb::getModules();
          if (isset($mod) == true) {
              $val = (array)$mod;
+             //$val['test'] = 'asdf';
          }
          break;
 
