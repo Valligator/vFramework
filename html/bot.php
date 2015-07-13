@@ -16,15 +16,18 @@ $(document).ready(function() {
   data: { action: "viewModList", token: tokenURL },
   dataType: "json",
   success: function(data) {
-   var modTable = '<table class="table">';
-   modTable = modTable + '<tr><td>ID</td></td>Name</td></tr>';
+   var modTable = '<table class="table table-condensed table-striped">';
+   modTable = modTable + '<thead><tr><th>ID</th><th>Name</th><th>Enabled</th><th>Created</th><th>Last Run</th></tr></thead><tbody>';
    $.each(data, function(i, val) {
     modTable = modTable + '<tr>';
     modTable = modTable + '<td>' + val.id + '</td>';
     modTable = modTable + '<td>' + val.name + '</td>';
+    modTable = modTable + '<td>' + val.enabled + '</td>';
+    modTable = modTable + '<td>' + val.time_created + '</td>';
+    modTable = modTable + '<td>' + val.time_lastrun + '</td>';
     modTable = modTable + '</tr>';
    });
-   modTable = modTable + '</table>';
+   modTable = modTable + '</tbody></table>';
    $('#divModView').html(modTable);
   }
  });
