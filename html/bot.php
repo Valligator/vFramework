@@ -9,11 +9,14 @@
 var token = '<?php echo $token;?>';
 $(document).ready(function() {
 <?php if ($phpSelf == 'module.php') { ?>
- $.ajax({
+ var viewModListAjax = $.ajax({
   method: "POST",
   url: "ajax_loadData.php",
   data: { action: "viewModList", token: token },
   dataType: "json"
+ });
+ viewModListAjax.success(function(data){
+  $('#divModView').html('!!!');
  });
 <?php } ?>
 });

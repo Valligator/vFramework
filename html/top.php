@@ -14,6 +14,10 @@ switch($topNav) {
  CASE "mod": $navMod = $navActive; break;
 }
 
+echo dirname(__FILE__);
+exit();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
