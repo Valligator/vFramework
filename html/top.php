@@ -14,12 +14,20 @@ switch($topNav) {
  CASE "mod": $navMod = $navActive; break;
 }
 
-echo dirname(__FILE__) . '<br />';
-echo $_SERVER['REQUEST_URI'] . '<br />';
-echo $_SERVER['PHP_SELF'] . '<br />';
-echo '<br /><br />';
-exit();
+$phpSelf = basename($_SERVER['PHP_SELF']);
 
+// Create new CSRF token and store in session variable
+unset($token);
+$token = vAuthUser::genNewToken();
+if (isset($token) == true) { $_SESSION['csrf-token'] = $token; }
+
+// Grab error messages
+$thisErrCode = 0;
+$thisErrMesg = '';
+if (isset($_SESSION['err_code']) == true) $thisErrCode = (int)$_SESSION['err_code'];
+if (isset($_SESSION['err_mesg']) == true) $thisErrMesg = (string)$_SESSION['err_mesg'];
+$_SESSION['err_code'] = '';
+$_SESSION['err_mesg'] = '';
 
 ?>
 <!DOCTYPE html>
