@@ -34,7 +34,7 @@ $_SESSION['err_mesg'] = '';
 <html lang="en">
 <head>
  <meta charset="utf-8" />
- <title>vFramework</title>
+ <title>Valligator - vFramework <?php echo FW_VERSION;?></title>
  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
 <body>
@@ -47,7 +47,7 @@ $_SESSION['err_mesg'] = '';
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
    </button>
-   <a class="navbar-brand" href="index.php">Valligator - vFramework <?php echo FW_VERSION;?></a>
+   <a class="navbar-brand" href="index.php"><strong>vFramework</strong></a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <ul class="nav navbar-nav">
