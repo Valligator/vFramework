@@ -17,8 +17,12 @@ $(document).ready(function() {
   dataType: "json",
   success: function(data) {
    var modTable = '<table class="table">';
+   modTable = modTable + '<tr><td>ID</td></td>Name</td></tr>';
    $.each(data, function(i, val) {
-    modTable = modTable + "<tr><td>Test</td></tr>";
+    modTable = modTable + '<tr>';
+    modTable = modTable + '<td>' + val.id + '</td>';
+    modTable = modTable + '<td>' + val.name + '</td>';
+    modTable = modTable + '</tr>';
    });
    modTable = modTable + '</table>';
    $('#divModView').html(modTable);
