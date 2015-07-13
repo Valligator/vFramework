@@ -16,8 +16,12 @@ $(document).ready(function() {
   data: { action: "viewModList", token: tokenURL },
   dataType: "json",
   success: function(data) {
-   $('#divModView').html('!!!');
-   alert('asdf');
+   var modTable = '<table class="table">';
+   $.each(data, function(i, val) {
+    modTable = modTable + "<tr><td>Test</td></tr>";
+   });
+   modTable = modTable + '</table>';
+   $('#divModView').html(modTable);
   }
  });
 <?php } ?>
