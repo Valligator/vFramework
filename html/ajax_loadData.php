@@ -18,7 +18,6 @@ if ($action != '' && $token != '' && $token === $_SESSION['csrf-token']) {
          $mod = vModuleDb::getModules();
          if (isset($mod) == true) {
              $val = (array)$mod;
-             //$val['test'] = 'asdf';
          }
          break;
 
